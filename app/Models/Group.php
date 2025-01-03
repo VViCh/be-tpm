@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Laravel\Sanctum\HasApiTokens; 
 
 class Group extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens;
 
     protected $fillable = [
         'nama_group',
         'password_group',
-<<<<<<< HEAD
-=======
-        'status_group',  
->>>>>>> Dextra
+        'status_group',
         'nama_leader',
         'email_leader',
         'nomor_wa_leader',
@@ -24,6 +22,10 @@ class Group extends Model
         'github_leader',
         'tmp_lahir_leader',
         'tgl_lahir_leader',
+        'is_binusian',
+        'cv',
+        'flazz_card',
+        'id_card',
     ];
 
     protected $casts = [

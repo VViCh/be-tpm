@@ -15,10 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_group');
             $table->string('password_group');
-<<<<<<< HEAD
-=======
             $table->string('status_group');
->>>>>>> Dextra
             $table->string('nama_leader');
             $table->string('email_leader')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -27,6 +24,10 @@ return new class extends Migration
             $table->string('github_leader');
             $table->string('tmp_lahir_leader');
             $table->date('tgl_lahir_leader');
+            $table->enum('is_binusian', ['binusian', 'non-binusian'])->default('non-binusian');
+            $table->string('cv')->nullable(); 
+            $table->string('flazz_card')->nullable();
+            $table->string('id_card')->nullable();    
             $table->rememberToken();
             $table->timestamps();
         });
