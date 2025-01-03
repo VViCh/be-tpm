@@ -13,6 +13,10 @@ class Group extends Model
     protected $fillable = [
         'nama_group',
         'password_group',
+<<<<<<< HEAD
+=======
+        'status_group',  
+>>>>>>> Dextra
         'nama_leader',
         'email_leader',
         'nomor_wa_leader',
