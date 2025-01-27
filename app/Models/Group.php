@@ -25,6 +25,7 @@ class Group extends Model
         'cv',
         'flazz_card',
         'id_card',
+        'is_admin'
     ];
 
     protected $casts = [
