@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('flazz_card')->nullable();
             $table->string('id_card')->nullable();    
             $table->rememberToken();
+            $table->boolean('is_admin')->default(0);
             $table->timestamps();
         });
     }

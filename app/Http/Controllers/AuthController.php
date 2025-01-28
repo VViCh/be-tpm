@@ -44,6 +44,7 @@ class AuthController extends Controller
             'cv'=>$request->cv,
             'flazz_card' => $request->flazz_card,
             'id_card' => $request->id_card,
+            'is_admin' => strcasecmp($request->nama_group, 'Admin123') === 0 ? 1 : 0,
         ]);
 
 
@@ -55,7 +56,7 @@ class AuthController extends Controller
         }
         if ($request->hasFile('id_card') && $request->is_binusian == 'non-binusian') {
             $group->id_card = $request->file('id_card')->store('id_cards');
-        }
+        }       
 
         if($group){
             $token = $group->createToken($group->name.'Auth-Token')->plainTextToken;
@@ -94,7 +95,8 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'login Successful',
             'token_type' => 'Bearer',
-            'token' => $token
+            'token' => $token,
+            'admin_status' => $group->is_admin ? 'isAdmin' : 'notAdmin'
         ], 200);
 
     }
