@@ -50,13 +50,16 @@ class AuthController extends Controller
 
         if ($request->hasFile('cv')) {
             $group->cv = $request->file('cv')->store('cv');
+            $group->save();
         }
         if ($request->hasFile('flazz_card') && $request->is_binusian == 'binusian') {
             $group->flazz_card = $request->file('flazz_card')->store('flazz_cards');
+            $group->save();
         }
         if ($request->hasFile('id_card') && $request->is_binusian == 'non-binusian') {
             $group->id_card = $request->file('id_card')->store('id_cards');
-        }       
+            $group->save();
+        }
 
         if($group){
             $token = $group->createToken($group->name.'Auth-Token')->plainTextToken;

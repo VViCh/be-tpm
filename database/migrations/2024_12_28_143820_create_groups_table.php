@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama_group');
             $table->string('password_group');
-            $table->string('status_group');
             $table->string('nama_leader');
             $table->string('email_leader')->unique();
             $table->timestamp('email_verified_at')->nullable();
