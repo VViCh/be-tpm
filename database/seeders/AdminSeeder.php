@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
     {
         DB::table('groups')->insert([
             'nama_group' => 'Admin123',
-            'password_group' => Hash::make('password123'), // Hash the password
+            'password_group' => Hash::make('password123'),
             'nama_leader' => 'Admin123',
             'email_leader' => 'admin123@gmail.com',
             'nomor_wa_leader' => '081311332436',
@@ -25,7 +25,7 @@ class AdminSeeder extends Seeder
             'github_leader' => 'AdminGit',
             'tmp_lahir_leader' => 'Jakarta',
             'tgl_lahir_leader' => '2001-01-01',
-            'is_admin' => 1, // Set as admin
+            'is_admin' => 1,
             'is_binusian' => 'binusian',
             'cv' => null,
             'flazz_card' => null,
